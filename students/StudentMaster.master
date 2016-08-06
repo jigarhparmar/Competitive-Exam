@@ -1,0 +1,83 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="StudentMaster.master.cs" Inherits="students_StudentMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Student Panel</title>
+    <link rel="stylesheet" href="../css/style1.css" type="text/css"/>
+    <link rel="stylesheet" href="../students/css/Style.css" type="text/css"/>
+    <script type = "text/javascript" >
+
+        function DisableBackButton() {
+            window.history.forward()
+        }
+        DisableBackButton();
+        window.onload = DisableBackButton;
+        window.onpageshow = function (evt) { if (evt.persisted) DisableBackButton() }
+        window.onunload = function () { void (0) }
+</script>
+</head>
+
+<body>
+        <form id="Form1" runat="server">
+		<div id="mainDiv">0
+			<div id="HeaderDiv" class="heder">
+                <h1 style="padding-left:10px;">Student Panel</h1>
+                
+                    <lable>
+                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                <asp:LinkButton ID="LinkButton1" onclick="LinkButton1_Click" runat="server" 
+                    CausesValidation="False"><h4 style="color:#000;"><u>LogOut</u></h4></asp:LinkButton>
+                </lable>
+                
+				
+        </div>
+        <hr />
+			<div id="mainContentdiv" class="clearfix">
+                
+				<div id="menuDiv" class="clearfix">
+                    <div id="imageDiv" style="height:150px; width:220px;  margin-left:15px; margin-top:2px; ">
+                       <asp:Image ID="Image1" runat="server" Height="150px" 
+            ImageUrl='IMAGE/<%# "imageName" %>' Width="220px" />
+                </div>
+                <hr />
+					<ul >
+						<li ><a href="StudentIndex.aspx">Home</a></li>
+                        <li><a href="viewSched.aspx">Exam Schedule</a></li>
+						<li><a href="ViewResult.aspx">View Exam Result</a></li>
+						<li><a href="DownloadMat.aspx">Download Matirial</a></li>
+						<li><a href="ChangeProfile.aspx">Change Password</a></li>
+                        <li><a href="feedBack.aspx">Feed Back</a></li>
+						
+					</ul>
+                    
+                    <div id="notification" class="clearfix"  >
+                        <h4 style="margin-top:0px; margin-bottom:0px;  color:#000000;">Notification</h4>
+                        <marquee id="ml" style="text-align: center" direction="up" behavior="scroll" scrolldelay="130" onmouseover="this.setAttribute('scrollamount', 0, 0);" onmouseout="this.setAttribute('scrollamount', 6, 0);"><asp:Repeater id="Repeater1" runat="server">
+                            <ItemTemplate>
+                                   
+                               <h4 style="text-transform:lowercase;"> <asp:HyperLink ID="HyperLink1" Target="_blank" runat="server" NavigateUrl='<%# Eval("link") %>'>
+                                <asp:Label ID="Label1" runat="server" ForeColor="Red" Text='<%# Eval("notifation") %>'></asp:Label></asp:HyperLink></h4><hr style="border: 1px dashed #000; margin:0;"  />
+                            </ItemTemplate>
+                        
+                        </asp:Repeater>
+                        </marquee>
+        
+                   </div>
+				</div>
+				<div id="contentDiv" class="clearfix">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+				</div>
+
+			</div>
+                
+
+			<div id="footerDiv" class="footer">
+				<h1>Footer Div</h1>
+			</div>
+		</div>
+        </form>	
+	</body>
+</html>

@@ -1,0 +1,67 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="adminMaster.master.cs" Inherits="admin_adminMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="../css/style1.css" type="text/css"/>
+    <link rel="stylesheet" href="../admin/css/Style.css" type="text/css"/>
+    <script type = "text/javascript" >
+
+        function DisableBackButton() {
+            window.history.forward()
+        }
+        DisableBackButton();
+        window.onload = DisableBackButton;
+        window.onpageshow = function (evt) { if (evt.persisted) DisableBackButton() }
+        window.onunload = function () { void (0) }
+</script>
+</head>
+
+<body>
+        <form id="Form1" runat="server">
+		<div id="mainDiv">
+			<div id="HeaderDiv" class="heder">
+                <h1 style="padding-left:10px; padding-top:10px; z-index:9999;">Admin Panel</h1>
+                
+                    <lable>
+                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                <asp:LinkButton ID="LinkButton1" onclick="LinkButton1_Click" runat="server" 
+                    CausesValidation="False"><h4 style="color:#000"><u>LogOut</u></h4></asp:LinkButton>
+                </lable>
+                
+				
+            </div>
+            <hr width="100%" />
+			<div id="mainContentdiv" class="clearfix" style="padding-top:20px;">
+                
+				<div id="menuDiv" class="clearfix">
+          
+					<ul>
+						<li ><a href="AdminIndex.aspx">Home</a></li>
+						<li><a href="AddAssistant.aspx">Add Assistant</a></li>
+                        <li><a href="ViewExSche.aspx">View ExamSchedule</a></li>
+						<li><a href="Report.aspx">Payment Wise Report </a></li>
+                        <li><a href="ViewCourseWise.aspx">Course wise Report </a></li>
+						<li><a href="ViewNotification.aspx">View Notification</a></li>
+                        <li><a href="viewFeedback.aspx">View FeedBack</a></li>
+						
+						<li><a href="ChangePassword.aspx">Change Password</a></li>
+                        
+						
+					</ul>
+        			</div>
+                
+				<div id="contentDiv" class="clearfix">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+				</div>
+			</div>
+			<div id="footerDiv" class="footer">
+				<h1>Footer Div</h1>
+			</div>
+		</div>
+        </form>	
+	</body>
+</html>

@@ -1,0 +1,47 @@
+﻿
+#Content
+{
+   padding-left:300px;
+   margin-top:10px;
+   margin-bottom:10px; 
+  
+}
+#outerDiv
+{
+    background: #b3dced; /* Old browsers */
+background: -moz-linear-gradient(top,  #b3dced 0%, #29b8e5 50%, #bce0ee 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b3dced), color-stop(50%,#29b8e5), color-stop(100%,#bce0ee)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #b3dced 0%,#29b8e5 50%,#bce0ee 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #b3dced 0%,#29b8e5 50%,#bce0ee 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #b3dced 0%,#29b8e5 50%,#bce0ee 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #b3dced 0%,#29b8e5 50%,#bce0ee 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3dced', endColorstr='#bce0ee',GradientType=0 ); /* IE6-9 */
+
+    padding-left:400px;
+    height:40px;
+    background-color:#90EBDB;
+    #border-top:10px solid;
+    #border-bottom:10px solid;
+    #border-radius:10px;
+}
+ .inputs {
+    background-color: #EAEAEA;
+    background: -moz-linear-gradient(top, #FFF, #EAEAEA);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.0, #FFF), color-stop(1.0, #EAEAEA));
+    border: 1px solid #CACACA;
+    color: #444;
+    padding: 5px 9px;
+    width: 250px;
+	margin-top:10px;
+    margin-left:5px;
+}
+
+.inputs:focus {
+    background: #FFF;
+    -webkit-box-shadow: 0 0 25px #CCC;
+    -moz-box-shadow: 0 0 25px #ccc;
+    -webkit-transform: scale(1.05);
+    
+  
+}
+
